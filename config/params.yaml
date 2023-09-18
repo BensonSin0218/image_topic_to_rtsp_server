@@ -1,0 +1,23 @@
+image_topic_to_rtsp_server_node:
+  ros__parameters:
+    image_topics_list: ["color", "depth"]
+    image_topics:
+      color:
+        topic_name: /camera/camera/color/image_raw
+        message_type: sensor_msgs/msg/Image
+        qos: 1
+        image_info:
+          topic_name: /camera/camera/color/camera_info
+          message_type: sensor_msgs/msg/CameraInfo
+          qos: 10
+      depth:
+        topic_name: /camera/camera/depth/image_rect_raw
+        message_type: sensor_msgs/msg/Image
+        qos: 1
+        image_info:
+          topic_name: /camera/camera/depth/camera_info
+          message_type: sensor_msgs/msg/CameraInfo
+          qos: 10
+    RTSP_server:
+      incoming_address: "0.0.0.0"
+      incoming_port: 8554
